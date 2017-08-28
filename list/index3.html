@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Accordations</title>
+	<style>
+		* {margin: 0; padding: 0;}
+		#accordian {
+			background: #004050;
+			width: 250px;
+			margin: 100px auto 0 auto;
+			color: white;
+		}
+		a { color: #fff; }
+		/*heading styles*/
+		#accordian h3 {
+			font-size: 12px;
+			line-height: 34px;
+			padding: 0 10px;
+			cursor: pointer;
+			/*fallback for browsers not supporting gradients*/
+			background: #003040;
+			background: linear-gradient(#003040, #002535);
+		}
+
+		/*iconfont styles*/
+		#accordian h3 span {
+			font-size: 16px;
+			margin-right: 10px;
+		}
+		/*list items*/
+		#accordian li {
+			list-style-type: none;
+		}
+		/*links*/
+		#accordian ul ul li a {
+			color: white;
+			text-decoration: none;
+			font-size: 11px;
+			line-height: 27px;
+			display: block;
+			padding: 0 15px;
+			/*transition for smooth hover animation*/
+			transition: all 0.15s;
+		}
+		/*hover effect on links*/
+		#accordian ul ul li a:hover {
+			background: #003545;
+			border-left: 5px solid lightgreen;
+		}
+		/*Lets hide the non active LIs by default*/
+		#accordian ul ul {
+			display: none;
+		}
+		#accordian li.active ul {
+			display: block;
+		}
+		.column {
+			width: 100%;
+			overflow: hidden;
+		}
+		.colL {
+			float: left;
+			width: 250px;
+			margin-right: 50px;
+		}
+		.colR {
+			float: left;
+			width: 800px;
+			padding: 50px 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="column">
+		<div class="colL">
+			<div id="accordian">
+				<ul>
+					<li class="active">
+						<h3><a href="#" data-src="005">Depth 1</a></h3>
+						<ul>
+							<li><a href="#" data-src="001">thumb 1</a></li>
+							<li><a href="#" data-src="002">thumb 2</a></li>
+							<li><a href="#" data-src="003">thumb 3</a></li>
+							<li><a href="#" data-src="004">thumb 4</a></li>
+						</ul>
+					</li>
+					<!-- we will keep this LI open by default -->
+					<li>
+						<h3>Depth 2</h3>
+						<ul>
+							<li><a href="#" data-src="005">thumb 1</a></li>
+							<li><a href="#" data-src="006">thumb 2</a></li>
+							<li><a href="#" data-src="007">thumb 3</a></li>
+						</ul>
+					</li>
+					<li>
+						<h3>Depth 3</h3>
+						<ul>
+							<li><a href="#" data-src="008">thumb 1</a></li>
+							<li><a href="#" data-src="009">thumb 2</a></li>
+							<li><a href="#" data-src="010">thumb 3</a></li>
+						</ul>
+					</li>
+					<li>
+						<h3>Depth 4</h3>
+						<ul>
+							<li><a href="#" data-src="011">thumb 1</a></li>
+							<li><a href="#" data-src="001">thumb 2</a></li>
+							<li><a href="#" data-src="002">thumb 3</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="colR">
+			<img src="./thumb/001.jpg" alt="">
+		</div>
+	</div>
+
+
+  	<script src="jquery-1.12.4.min.js"></script>
+    <script>
+	    $(function(){
+		    $('#accordian h3').click(function(){
+			    //hiding all open accordian
+			    $(this).parent().parent().find('ul').slideUp();
+			    //looking if any ul is not open then slide down accordiation
+			    if(!$(this).next().is(":visible")){
+				    $(this).next().slideDown();
+			    }
+		    });
+		    $('#accordian a').on('click', function() {
+			    var img = $(this).attr('data-src');
+			    var $bigVisual = $('.colR').children('img');
+			    $bigVisual.attr({ src: './thumb/' + img + '.jpg'});
+
+			});
+	    });
+	</script>
+
+</body>
+</html>

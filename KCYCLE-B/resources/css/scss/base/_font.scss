@@ -1,0 +1,132 @@
+@charset "utf-8";
+/* ---------------------------------------------------------------------------
+Noto Sans KR (korean) http://www.google.com/fonts/earlyaccess
+--------------------------------------------------------------------------- */
+@font-face {
+	font-family: "Noto-Thin";
+	src: font("NotoSansKR-Thin.eot"); // IE9 Compat Modes
+	src: font("NotoSansKR-Thin.eot?#iefix") format("embedded-opentype"); // IE6-IE8
+	src: local(※), 	font("NotoSansKR-Thin.woff") format("woff"); // Modern Browsers
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Noto-Light";
+	src: font("NotoSansKR-Light.eot");
+	src: font("NotoSansKR-Light.eot?#iefix") format("embedded-opentype");
+	src: local(※), font("NotoSansKR-Light.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Noto-Regular';
+	src: font("NotoSansKR-Regular.eot");
+	src: font("NotoSansKR-Regular.eot?#iefix") format("embedded-opentype");
+	src: local(※), font("NotoSansKR-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Noto-Medium';
+	src: font("NotoSansKR-Medium.eot");
+	src: font("NotoSansKR-Medium.eot?#iefix") format("embedded-opentype");
+	src: local(※), 	font("NotoSansKR-Medium.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Noto-Bold';
+	src: font("NotoSansKR-Bold.eot");
+	src: font("NotoSansKR-Bold.eot?#iefix") format("embedded-opentype");
+	src: local(※), font("NotoSansKR-Bold.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Noto-Black';
+	src: font("NotoSansKR-Black.eot");
+	src: font("NotoSansKR-Black.eot?#iefix") format("embedded-opentype");
+	src: local(※), font("NotoSansKR-Black.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+/* ------------------------- WebFont NotoKr  ------------------------- */
+@mixin Noto-Thin {
+	//font-family: 'Malgun Gothic', sans-serif;
+	font-family: 'Noto-Thin', sans-serif;
+	font-weight: normal;
+}
+@mixin Noto-Light {
+	//font-family: 'Malgun Gothic', sans-serif;
+	font-family: 'Noto-Light', sans-serif;
+	font-weight: normal;
+}
+@mixin Noto-Regular {
+	//font-family: 'Malgun Gothic', sans-serif;
+	//font-weight: bold;
+	font-family: 'Noto-Regular', sans-serif;
+	font-weight: normal;
+}
+@mixin Noto-Medium {
+	//font-family: 'Malgun Gothic', sans-serif;
+	//font-weight: bold;
+	font-family: 'Noto-Medium', sans-serif;
+	font-weight: normal;
+}
+@mixin Noto-Bold {
+	//font-family: 'Malgun Gothic', sans-serif;
+	//font-weight: bold;
+	font-family: 'Noto-Bold', sans-serif;
+	font-weight: normal;
+}
+@mixin Noto-Black {
+	//font-family: 'Malgun Gothic', sans-serif;
+	//font-weight: bold;
+	font-family: 'Noto-Black', sans-serif;
+	font-weight: normal;
+}
+
+body {
+	@include Noto-Light;
+}
+h1, h2, h3, h4, h5, h6 {
+	@include Noto-Regular;
+	color: $fc-dark;
+}
+big, strong, b, dt, th {
+	@include Noto-Regular;
+	color: $fc-dark;
+}
+body {
+	@include fluid-type(font-size, 576px, 1200px, 15px, 15px);
+}
+.small {
+	@include fluid-type(font-size, 576px, 1200px, 14px, 16px);
+}
+.fs-small {
+	@include fluid-type(font-size, 576px, 1200px, 14px, 13px);
+}
+.popup-zone {
+	h1 {
+		font-family: 'Noto-Medium', sans-serif;
+		font-size: 18px;
+	}
+}
+.lnb-list {
+	& > li {
+		& > a {
+			//font-size: 17px;
+			@include fluid-type(font-size, 576px, 1200px, 20px, 17px);
+			//@include Noto-Regular;
+		}
+	}
+}
+.sm {
+	a {
+		//@include fluid-type(font-size, 576px, 1200px, 20px, 14px);
+		//@include Noto-Light;
+	}
+}
+.footer strong, .footer-first-wrap strong {
+	font-family: 'Noto-Light', sans-serif;
+}

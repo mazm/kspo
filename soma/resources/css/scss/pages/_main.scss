@@ -1,0 +1,394 @@
+@charset "utf-8";
+/* ------------------------- Main Page ------------------------- */
+.owl-prev {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	z-index: 10;
+	left: 0;
+	top: 50%;
+	margin-top: -25px;
+	background: image('main/nav_prev.png') no-repeat left top;
+	text-indent: -9999em;
+	@include mq('md') {
+		display: none;
+	}
+}
+.owl-next {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	z-index: 10;
+	right: 0;
+	top: 50%;
+	margin-top: -25px;
+	background: image('main/nav_next.png') no-repeat left top;
+	text-indent: -9999em;
+	@include mq('md') {
+		display: none;
+	}
+}
+
+section {
+	max-width: 1140px;
+	margin: 0 auto;
+	overflow: hidden;
+	.inner {
+		padding: 0 10px;
+		@include mq('md') {
+			padding: 0;
+		}
+	}
+}
+
+/* 메인 슬라이드 */
+.full {
+	margin-bottom: 75px;
+	@include mq('xs') {
+		margin-bottom: 30px;
+	}
+}
+/* 메인 슬라이드 */
+.main-visual {
+	position: relative;
+	height: 450px;
+	@include mq('sm') {
+		height: 600px;
+	}
+}
+.mv-slide {
+	width: 100%;
+	height: 100%;
+	&.owl-carousel {
+		.owl-stage-outer {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			.owl-stage {
+				height: 100%;
+				.owl-item {
+					height: 100%;
+				}
+			}
+		}
+		
+	}
+	.item img {
+		margin: 0 auto;
+	}
+	.item {
+		height: 100%;
+		transition: .5s;
+		position: relative;
+		width: 100%;
+		.text-pos {
+			max-width: 1140px;
+			margin: 0 auto;
+			position: relative;
+			height: 100%;
+			.txt {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+		}
+		.txt {
+			border-top: 3px solid #f36e4f;
+			background: image('main/txt_bg.png') repeat left top;
+			color: #fff;
+			text-align: left;
+			letter-spacing: -1px;
+			transition: .5s;
+			margin: 0 auto;
+			width: 320px;
+			padding: 30px 20px;
+			height: 270px;
+			//height: 330px;
+			@include mq('xs') {
+				padding: 50px 40px;
+				width: 556px;
+			}
+			.t1 {
+				font-size: 14px;
+				line-height: 1.2;
+			}
+			.t2 {
+				font-size: 45px;
+				line-height: 1.1;
+				margin: 15px 0;
+			}
+			.t3 {
+				font-size: 20px;
+			}
+		}
+		&.slide1 {
+			background: image('main/m_slide_1.jpg') no-repeat center top;
+			background-size: cover;
+		}
+		&.slide2 {
+			background: image('main/m_slide_2.jpg') no-repeat center top;
+			background-size: cover;
+		}
+		
+	}
+	.customNav {
+		position: relative;
+		max-width: 1140px;
+		margin: 0 auto;
+		width: 240px;
+		top: -90px;
+		transition: .5s;
+		@include mq('sm') {
+			top: -160px;
+		}
+		.owl-prev {
+			position: absolute;
+			width: 113px;
+			height: 20px;
+			z-index: 10;
+			left: 0;
+			top: 50%;
+			margin-top: -25px;
+			background: image('main/m_prev.png') no-repeat left top;
+			text-indent: -9999em;
+			cursor: pointer;
+		}
+		.owl-next {
+			position: absolute;
+			width: 113px;
+			height: 20px;
+			z-index: 10;
+			right: 0;
+			top: 50%;
+			margin-top: -25px;
+			background: image('main/m_next.png') no-repeat left top;
+			text-indent: -9999em;
+			cursor: pointer;
+		}
+	}
+	.owl-dots {
+		transition: .5s;
+		position: absolute;
+		width: 100%;
+		max-width: 1140px;
+		bottom: 10px;
+		@include mq('xs') {
+			left: 50%;
+			margin-left: -490px;
+		}
+		.owl-dot {
+			border: 1px solid transition;
+			padding: 3px;
+			margin: 3px;
+			span {
+				width: 13px;
+				height: 13px;
+				background: #fff;
+				border-radius: 30px;
+				margin: 5px 0 0 0;
+			}
+			&:hover {
+				span {
+					width: 13px;
+					height: 13px;
+					margin: 5px 0 0 0;
+					background: #f36e4f;
+					border-radius: 30px;
+				}
+			}
+			&.active,
+			&.active:hover {
+				border: 5px solid #f36e4f;
+				border-radius: 30px;
+				span {
+					margin: 0;
+					width: 13px;
+					height: 13px;
+					background: transparent;
+				}
+			}
+		}
+	}
+	.owl-dots .owl-dot {
+		display: inline-block;
+		zoom: 1;
+	}
+}
+
+/* 관람시간 */
+.info {
+	padding: 0 10px;
+	margin-bottom: 30px;
+	@include mq('md') {
+		padding: 0;
+		margin-bottom: 60px;
+	}
+	.info-wrap {
+		@include rig;
+		& > div {
+			@include rig-child;
+			position: relative;
+			border-bottom: 1px solid $bor1;
+			width: 97.9%;
+			margin-bottom: 30px;
+			@include mq('sm') {
+				width: 47.9%;
+			}
+			@include mq('md') {
+				margin-bottom: 0;
+				width: 22.9%;
+			}
+			&.news-event {
+				border-bottom: 0;
+				@include mq('sm') {
+					width: 97.9%;
+				}
+				@include mq('md') {
+					width: 47.9%;
+				}
+			}
+		}
+	}
+	h2 {
+		font-size: 20px;
+		padding-bottom: 5px;
+		border-bottom: 1px solid #f36e4f;
+		color: #f36e4f;
+		margin-bottom: 16px;
+	}
+	.more {
+		position: absolute;
+		right: 0;
+		top: 7px;
+		&:before {
+			content: '';
+			width: 21px;
+			height: 21px;
+			display: inline-block;
+			background: image('main/icon_more_warm.png') no-repeat left top;
+		}
+	}
+	.news-event {
+		h2 {
+			color: #222;
+			border-bottom: 1px solid #222;
+			margin-bottom: 0;
+		}
+		.more:before {
+			background: image('main/icon_more.png') no-repeat left top;
+		}
+	}
+	.period {
+		font-size: 16px;
+		color: #222;
+	}
+	.time {
+		color: #222;
+		font-size: 16px;
+	}
+	.time-info {
+		.time {
+			background: image('main/icon_watch.png') no-repeat left center;
+			padding-left: 30px;
+			font-size: 30px;
+			margin-bottom: 10px;
+			& + ul {
+				li {
+					background: image('common/dot.png') no-repeat left center;
+					padding-left: 7px;
+				}
+			}
+		}
+	}
+	.view-info {
+		.period {
+			color: #656565;
+		}
+		.time {
+			margin-bottom: 15px;
+		}
+	}
+	.news-event {
+		border-bottom: 0;
+		.list {
+			& > li {
+				border-bottom: 1px solid $bor1;
+				padding: 15px 0;
+				a {
+					display: block;
+					position: relative;
+					@include text-ellipsis;
+					width: 100%;
+					padding-right: 85px;
+					line-height: 24px;
+					span {
+						display: inline-block;
+						position: absolute;
+						right: 0;
+						top: 5px;
+					}
+					.icon {
+						position: static;
+						border: 1px solid #f36e4f;
+						line-height: 24px;
+						padding: 0 5px;
+						width: 54px;
+						margin-right: 5px;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* 투어예약 */
+.tour {
+	padding: 0 10px;
+	margin-bottom: 30px;
+	@include mq('md') {
+		padding: 0;
+		margin-bottom: 60px;
+	}
+}
+.tour-wrap {
+	@include rig;
+	& > div {
+		@include rig-child;
+		border: 1px solid #e0e0e0;
+		text-align: center;
+		padding-bottom: 19px;
+		width: 97.9%;
+		margin-bottom: 30px;
+		@include mq('xs') {
+			margin-bottom: 0;
+			width: 31.2%;
+		}
+		h2 {
+			font-size: 29px;
+			font-family: 'Noto-Light', sans-serif;
+			margin-top: 15px;
+			& + p {
+				font-size: 12px;
+				font-family: 'Noto-Light', sans-serif;
+				color: #b2b2b2;
+				margin-bottom: 25px;
+			}
+		}
+		a {
+			display: inline-block;
+			font-size: 13px;
+			color: #fff;
+			background: #73675e;
+			padding: 10px 30px;
+			&.btn-tour {
+				background: #f36e4f;
+				
+			}
+		}
+		.adi {
+			width: 100%;
+			max-width: auto;
+		}
+	}
+}

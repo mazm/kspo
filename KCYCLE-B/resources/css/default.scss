@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* ****************************************************************************
+	@CreateDate   : 2017.06
+	@ModifyDate   :
+	@Description  : scss build
+	@Author       : namu
+***************************************************************************** */
+@import 'scss/utils/functions';
+@import 'scss/utils/variables';
+@import 'scss/utils/fluidType';
+@import 'scss/utils/mixins';
+@import 'scss/utils/mq';
+//@import 'scss/vendors/font-awesome';
+
+@import 'scss/base/reset';
+@import 'scss/base/font';
+@import 'scss/base/common';
+
+@import 'scss/grid/layout';
+@import 'scss/grid/top';
+@import 'scss/grid/lnb';
+@import 'scss/grid/snb';
+@import 'scss/grid/footer';
+
+@import 'scss/pages/main';
+
+
+// 실서버반영시 삭제
+#vp-genie {
+	background: rgba(255,0,0,.75);
+	color: #fff;
+	text-align: center;
+	&:after {
+		display: block;
+		padding: 10px;
+		font-weight: bold;
+		letter-spacing: 0;
+		content: 'Mobile : 0 - 575 ';
+	}
+	@include mq('xs') {
+		background: rgba(29,68,9,.75);
+		&:after {
+			content: 'XS: 576 - 767 ';
+		}
+	}
+	@include mq('sm') {
+		background: rgba(0,167,225,.75);
+		&:after {
+			content: 'SM: 768 - 991';
+		}
+	}
+	@include mq('md') {
+		background: rgba(10,42,112,.75);
+		&:after {
+			content: 'MD : 992 - 1999';
+		}
+	}
+	@include mq('lg') {
+		background: rgba(0,0,0,.75);
+		&:after {
+			content: 'LG : 1200 - ';
+		}
+	}
+}
+// javascript 분기
+@media (max-width: 991px) { head { font-family: "Mobile"; } }
+@media (min-width: 992px) { head { font-family: "Large"; } }
+.js-toggle-self {
+	&.s-toggled {
+		color: red !important;
+	}
+}

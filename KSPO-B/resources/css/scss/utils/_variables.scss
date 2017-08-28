@@ -1,0 +1,27 @@
+@charset "utf-8";
+$a-tags: 'a, a:active, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+$fc-base: #666;
+$fc-dark: #222;
+$fc-white: #fff;
+$fc-stress: #ff7e00;
+$fc-blue: #092c6f;
+
+$bg-darkBlue: #0a2a70;
+$border-navy: #555d69;
+$stress2: #ff840c;
+
+$bor1: #e6e6e6;
+$bor2: #f3f3f3;
+$bor3: #8d919d;
+$bor4: #e3e3e3;
+$bor5: #f1f1f5;
+$bor6: #cfcdc9;
+
+$breakpoints: (
+	'xs': 		( min-width:  576px ),
+	'sm': 		( min-width:  768px ),
+	'md': 		( min-width:  992px ),
+	'lg': 		( min-width: 1200px )
+) !default;

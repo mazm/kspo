@@ -1,0 +1,648 @@
+@charset "utf-8";
+/* ------------------------- Main Page ------------------------- */
+.owl-prev {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	z-index: 10;
+	left: 0;
+	top: 50%;
+	margin-top: -25px;
+	background: image('main/nav_prev.png') no-repeat left top;
+	text-indent: -9999em;
+}
+.owl-next {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	z-index: 10;
+	right: 0;
+	top: 50%;
+	margin-top: -25px;
+	background: image('main/nav_next.png') no-repeat left top;
+	text-indent: -9999em;
+}
+
+section {
+	max-width: 1140px;
+	margin: 0 auto;
+	overflow: hidden;
+	.inner {
+		padding: 0 10px;
+		@include mq('md') {
+			padding: 0;
+		}
+	}
+}
+
+/* 메인 슬라이드 */
+.main-visual {
+	position: relative;
+	height: 450px;
+	@include mq('sm') {
+		height: 730px;
+	}
+	.quick {
+		position: relative;
+		max-width: 1140px;
+		margin: 0 auto;
+		ul {
+			position: absolute;
+			z-index: 10;
+			//overflow: hidden;
+			top: -46px;
+			right: 0;
+			width: 100%;
+			left: 0;
+			@include mq('sm') {
+				position: absolute;
+				z-index: 10;
+				left: auto;
+				right: 0;
+				top: -580px;
+				width: 133px;
+			}
+			li {
+				//background: #fff;
+				font-size: 0;
+				position: relative;
+				height: 46px;
+				float: left;
+				width: 20%;
+				@include mq('sm') {
+					float: none;
+					width: 100%;
+				}
+				a {
+					background: image('common/quick_bg.png') repeat right top;
+					height: 46px;
+					display: inline-block;
+					width: 100%;
+					text-align: center;
+					@include mq('sm') {
+						position: absolute;
+						border-bottom: 1px solid #5e6f5d;
+						right: 0;
+						margin: 0 0 0 auto;
+						width: 46px;
+					}
+					&:after {
+						content: '';
+						width: 46px;
+						height: 46px;
+						display: inline-block;
+						background: image('common/icon_quick.png') no-repeat 0 0;
+						margin: 0 auto;
+						@include mq('sm') {
+							position: absolute;
+							right: 0;
+							top: 0;
+						}
+					}
+					&:hover,
+					&.active {
+						background: #fd6e00;
+						span {
+							position: absolute;
+							display: inline-block;
+							background: #fff;
+							border: 1px solid #efefef;
+							padding: 11px 0;
+							letter-spacing: -1px;
+							color: #222;
+							text-align: center;
+							left: 0;
+							top: -46px;
+							width: 100%;
+							font-size: 13px;
+							height: 46px;
+							&:after {
+								content: '';
+								position: absolute;
+								bottom: -8px;
+								left: 50%;
+								margin-left: -8px;
+								width: 0;
+								height: 0;
+								border-style: solid;
+								border-width: 8px 8px 0 8px;
+								border-color: #fff transparent transparent transparent ;
+							}
+							
+							@include mq('sm') {
+								font-size: 15px;
+								width: 87px;
+								left: -87px;
+								top: 0;
+								&:after {
+									content: '';
+									position: absolute;
+									bottom: 0;
+									left: auto;
+									margin-left: 0;
+									right: -8px;
+									top: 50%;
+									margin-top: -8px;
+									width: 0;
+									height: 0;
+									border-style: solid;
+									border-width: 8px 0 8px 8px;
+									border-color: transparent transparent transparent #fff;
+								}
+							}
+						}
+					}
+				}
+				span {
+					display: none;
+					
+				}
+				&:nth-child(1) {
+					a:after {
+						background-position: 0 0;
+					}
+				}
+				&:nth-child(2) {
+					a:after {
+						background-position: 0 -46px;
+					}
+				}
+				&:nth-child(3) {
+					a:after {
+						background-position: 0 -92px;
+					}
+				}
+				&:nth-child(4) {
+					a:after {
+						background-position: 0 -138px;
+					}
+				}
+				&:nth-child(5) {
+					a:after {
+						background-position: 0 -184px;
+					}
+				}
+			}
+		}
+	}
+}
+.mv-slide {
+	width: 100%;
+	overflow: hidden;
+	height: 100%;
+	.owl-stage-outer {
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		.owl-stage {
+			height: 100%;
+			.owl-item {
+				height: 100%;
+			}
+		}
+	}
+	.item img {
+		margin: 0 auto;
+	}
+	.item {
+		height: 100%;
+		padding-top: 20px;
+		transition: .5s;
+		@include mq('sm') {
+			padding-top: 115px;
+		}
+		.txt {
+			border: 6px solid #fff;
+			width: 290px;
+			margin: 0 auto;
+			color: #fff;
+			text-align: center;
+			letter-spacing: -1px;
+			padding: 10px 0;
+			transition: .5s;
+			@include mq('sm') {
+				padding: 40px 0;
+			}
+			.t1 {
+				font-size: 18px;
+				line-height: 1.2;
+			}
+			.t2 {
+				font-size: 60px;
+				line-height: 1.1;
+				margin: 15px 0;
+			}
+			.t3 {
+				font-size: 16px;
+			}
+		}
+		.hq-cont {
+			padding: 40px 0 0 20px;
+			max-width: 1140px;
+			margin: 0 auto;
+			padding-top: 60px;
+			.txt1 { font-size: 20px; color: $fc-dark; font-family: 'Noto-Reqular', sans-serif; }
+			.txt2 { font-size: 36px; color: $fc-dark; font-family: 'Noto-Medium', sans-serif; line-height: 1.2; }
+			.txt3 { font-size: 36px; color: $fc-stress; font-family: 'Noto-Medium', sans-serif; line-height: 1.2; }
+			.txt4 { font-size: 24px; color: $fc-stress; font-family: 'Noto-Light', sans-serif; }
+		}
+		&.slide1 {
+				background: image('main/m_slide_1.jpg') no-repeat center top;
+				background-size: cover;
+		}
+		&.slide2 {
+				background: image('main/m_slide_2.jpg') no-repeat center top;
+				background-size: cover;
+		}
+		
+	}
+	.customNav {
+		position: relative;
+		max-width: 1140px;
+		margin: 0 auto;
+		width: 240px;
+		top: -90px;
+		transition: .5s;
+		@include mq('sm') {
+			top: -160px;
+		}
+		.owl-prev {
+			position: absolute;
+			width: 113px;
+			height: 20px;
+			z-index: 10;
+			left: 0;
+			top: 50%;
+			margin-top: -25px;
+			background: image('main/m_prev.png') no-repeat left top;
+			text-indent: -9999em;
+			cursor: pointer;
+		}
+		.owl-next {
+			position: absolute;
+			width: 113px;
+			height: 20px;
+			z-index: 10;
+			right: 0;
+			top: 50%;
+			margin-top: -25px;
+			background: image('main/m_next.png') no-repeat left top;
+			text-indent: -9999em;
+			cursor: pointer;
+		}
+	}
+	.owl-dots {
+		transition: .5s;
+		position: absolute;
+		width: 100%;
+		bottom: 90px;
+		@include mq('sm') {
+			bottom: 160px;
+		}
+		.owl-dot {
+			border: 1px solid transition;
+			padding: 3px;
+			margin: 3px;
+			span {
+				width: 6px;
+				height: 6px;
+				margin: 5px 5px;
+				background: #8fab94;
+			}
+			&:hover {
+				span {
+					width: 6px;
+					height: 6px;
+					margin: 5px 5px;
+					background: #fff;
+				}
+			}
+			&.active,
+			&.active:hover {
+				border: 1px solid #fff;
+				span {
+					width: 5px;
+					height: 5px;
+					background: #fff;
+				}
+			}
+		}
+	}
+	.owl-dots .owl-dot {
+		display: inline-block;
+		zoom: 1;
+	}
+	.owl-dots .owl-dot span {
+		border-radius: 0;
+	}
+}
+
+// 올림픽 파크텔
+.parktell-info {
+	padding: 45px 10px;
+	@include mq('md') {
+		padding: 85px 0;
+	}
+	.title {
+		width: 100%;
+		overflow: hidden;
+		padding-bottom: 35px;
+		@include mq('sm') {
+			padding-bottom: 65px;
+		}
+		h2 {
+			font-size: 42px;
+			text-transform: uppercase ;
+			line-height: 1.2;
+			margin-bottom: 20px;
+			@include mq('sm') {
+				margin: 0;
+				float: left;
+				width: 285px;
+			}
+			span {
+				@include mq('sm') {
+					display: block;
+				}
+			}
+		}
+		.info {
+			@include mq('sm') {
+				float: left;
+				width: calc(100% - 285px);
+			}
+		}
+	}
+	.reservation {
+		width: 100%;
+		overflow: hidden;
+		height: 506px;
+		.reservation-info {
+			height: 100%;
+			float: left;
+			background: #f06a4b;
+			padding-top: 70px;
+			width: 180px;
+			@include mq('sm') {
+				width: 285px;
+			}
+			.info {
+				width: 155px;
+				margin: 0 auto;
+				text-align: center;
+				color: #fff;
+				h3 {
+					font-size: 15px;
+					color: #fff;
+					margin-bottom: 35px;
+					&:before {
+						content: '';
+						width: 107px;
+						height: 109px;
+						display: block;
+						margin: 0 auto 35px;
+						background: image('main/icon_reserve.png') no-repeat left top;
+					}
+				}
+				li {
+					margin-bottom: 5px;
+					a {
+						display: block;
+						border: 1px solid #fbd3c9;
+						padding: 7px;
+					}
+				}
+			}
+		}
+		.reservation-slide {
+			height: 100%;
+			float: left;
+			width: calc(100% - 180px);
+			@include mq('sm') {
+				width: calc(100% - 285px);
+			}
+			&.owl-carousel .owl-item img {
+				display: block;
+				max-width: auto;
+				
+			}
+			.owl-dots {
+				position: absolute;
+				bottom: 30px;
+				left: -120px;
+				@include mq('sm') {
+					left: -200px;
+				}
+				.owl-dot {
+					span {
+						width: 10px;
+						height: 10px;
+						margin: 5px 5px;
+						background: #f06a4b;
+						display: block;
+						-webkit-backface-visibility: visible;
+						transition: opacity .2s ease;
+						border-radius: 30px;
+						border: 1px solid #fff;
+					}
+					&.active span {
+						background: #fff;
+						width: 30px;
+						border: 1px solid #fff;
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+.news {
+	@include mq('md') {
+		float: left;
+		width: 48%;
+	}
+}
+/*  KSPO 통합소식 */
+.all-news {
+	background: #eee8de;
+	text-align: center;
+	padding: 55px 0;
+	h2 {
+		@include fluid-type(font-size, 576px, 1200px, 20px, 20px);
+		font-family: 'Noto-Medium', sans-serif;
+		color: #222;
+		margin-bottom: 50px;
+		letter-spacing: 2px;
+	}
+	.total-news-slide {
+		margin-top: 20px;
+		padding: 0 50px;
+		.item {
+			background: #fff;
+			text-align: left;
+			max-width: 267px;
+			margin: 0 auto;
+			&.slide1 {
+				margin-top:20px;
+			}
+			a {
+				display: block;
+			}
+			.news-cont {
+				min-height: 120px;
+				padding: 25px 20px;
+				strong {
+					font-size: 18px;
+					font-family: 'Noto-Regular', sans-serif;
+				}
+				p {
+					margin: 7px 0 10px 0;
+					&.date {
+						margin-bottom: 0;
+						font-size: 14px;
+						background: image('main/icon_period.png') no-repeat left center;
+						padding-left: 20px;
+					}
+				}
+			}
+		}
+		&.owl-carousel .owl-item img {
+			margin: 0 auto;
+		}
+		.owl-prev {
+			position: absolute;
+			width: 40px;
+			height: 68px;
+			z-index: 10;
+			left: 0;
+			top: 50%;
+			margin-top: -34px;
+			background: image('main/nav_prev1.png') no-repeat left top;
+			text-indent: -9999em;
+		}
+		.owl-next {
+			position: absolute;
+			width: 40px;
+			height: 68px;
+			z-index: 10;
+			right: 0;
+			top: 50%;
+			margin-top: -34px;
+			background: image('main/nav_next1.png') no-repeat left top;
+			text-indent: -9999em;
+		}
+	}
+	.multi-ellipsis {
+		height: 65px;
+	}
+}
+.full.notice {
+	background: #f5f5f5;
+	padding: 35px 10px 55px;
+	@include mq('md') {
+		padding: 75px 0 105px;
+	}
+	h2 {
+		@include fluid-type(font-size, 576px, 1200px, 20px, 20px);
+		font-family: 'Noto-Medium', sans-serif;
+		color: #222;
+		margin-bottom: 50px;
+		letter-spacing: 2px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.notice-sec {
+		padding: 25px 30px;
+		background: #fff;
+		h3 {
+			@include fluid-type(font-size, 576px, 1200px, 20px, 20px);
+			font-family: 'Noto-Medium', sans-serif;
+			text-align: left;
+			color: #f06a4b;
+		}
+	}
+	.noti-wrap {
+		@include rig;
+		& > div {
+			@include rig-child;
+			width: 97.9%;
+			@include mq('md') {
+				width: 47.9%;
+			}
+		}
+	}
+	.etc {
+		@include rig;
+		margin-top: 20px;
+		& > li {
+			@include rig-child;
+			width: 97.9%;
+			
+			@include mq('xs') {
+				width: 47.9%;
+			}
+			&:first-child {
+				border-bottom: 1px solid #ddd;
+				padding-bottom: 15px;
+				@include mq('xs') {
+					padding: 0;
+					border: 0;
+					border-right: 1px solid #ddd;
+				}
+				
+			}
+		}
+	}
+	.facebook-api {
+		text-align: center;
+		.pc { display: none;}
+		@include mq('xs') {
+			.pc {
+				display: block;
+			}
+			.mo {
+				display: none;
+			}
+		}
+	}
+}
+.notice-list {
+	width: 100%;
+	overflow: hidden;
+	
+	li {
+		padding: 5px 0;
+		&.title {
+			margin: 10px 0 20px;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #ddd;
+			strong {
+				font-size: 22px;
+				color: #222;
+				display: block;
+				margin-bottom: 10px;
+				@include text-ellipsis;
+				width: 100%;
+			}
+			a {
+				padding: 0;
+			}
+		}
+		&:not(:first-child) {
+			a {
+				position: relative;
+				@include text-ellipsis;
+				width: 100%;
+				padding-right: 110px;
+				span {
+					position: absolute;
+					right: 0;
+					width: 110px;
+					text-align: right;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* ------------------------- Layout  ------------------------- */
+.contents {
+	padding: 0;
+	position: relative;
+	@include mq('md') {
+		padding: 0;
+	}
+}

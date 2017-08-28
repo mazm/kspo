@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, article, aside, canvas, details, embed, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; vertical-align: baseline; }
+
+img, fieldset, form, label, legend, figure, figcaption, input, button { margin: 0; padding: 0; border: 0; vertical-align: middle; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+button::-moz-focus-inner, input[type=button]::-moz-focus-inner, input[type=submit]::-moz-focus-inner, input[type=reset]::-moz-focus-inner { padding: 0; border: 0; }
+
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; }
+
+img { line-height: 0; font-size: 0; }
+
+a { text-decoration: none; color: inherit; }
+
+/* ------------------------- NotoKR  ------------------------- */
+@font-face { font-family: 'notokr-regular'; src: url("/2017/fonts/notokr-regular.eot"); src: url("/2017/fonts/notokr-regular.eot?#iefix") format("embedded-opentype"), url("/2017/fonts/notokr-regular.woff") format("woff"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'notokr-medium'; src: url("/2017/fonts/notokr-medium.eot"); src: url("/2017/fonts/notokr-medium.eot?#iefix") format("embedded-opentype"), url("/2017/fonts/notokr-medium.woff") format("woff"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'notokr-bold'; src: url("/2017/fonts/notokr-bold.eot"); src: url("/2017/fonts/notokr-bold.eot?#iefix") format("embedded-opentype"), url("/2017/fonts/notokr-bold.woff") format("woff"); font-weight: normal; font-style: normal; }
+/* ------------------------- NotoKR Hestia ------------------------- */
+@font-face { font-family: 'h-notokr-light'; src: url("/2017/fonts/NotoSansKR-Light-Hestia.eot"); src: url("/2017/fonts/NotoSansKR-Light-Hestia?#iefix") format("embedded-opentype"), url("/2017/fonts/NotoSansKR-Light-Hestia.woff") format("woff"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'h-notokr-regular'; src: url("/2017/fonts/NotoSansKR-Medium-Hestia.eot"); src: url("/2017/fonts/NotoSansKR-Medium-Hestia?#iefix") format("embedded-opentype"), url("/2017/fonts/NotoSansKR-Medium-Hestia.woff") format("woff"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'h-notokr-bold'; src: url("/2017/fonts/NotoSansKR-Bold-Hestia.eot"); src: url("/2017/fonts/NotoSansKR-Bold-Hestia?#iefix") format("embedded-opentype"), url("/2017/fonts/NotoSansKR-Bold-Hestia.woff") format("woff"); font-weight: normal; font-style: normal; }
+/* ------------------------- WebFont NotoKr  ------------------------- */
+h1, h2, h3, h4, h5, h6 { font-family: 'notokr-bold', sans-serif; font-weight: normal; }
+
+big, strong, b, dt, th { font-family: 'notokr-medium', sans-serif; font-weight: normal; }
+
+html { font-size: 62.5%; /* Sets up the Base 10 stuff */overflow-y: auto;  }
+
+body { font-family: 'notokr-regular', sans-serif; font-weight: normal; font-size: 14px; font-size: 1.4rem; line-height: 1.5; color: #333; }
+
+html, body { height: 100%; overflow-y: auto; }
+
+
+.result-lst2 li {margin-top: 10px; padding: 0 15px;}
+.result-lst2 li:fisrt-child {margin-top: 0;}
+.result-lst2 span {display: block; text-indent: 0;}
+.result-lst2 .t1 {color: #275bae;	text-indent: -15px;}
+
+

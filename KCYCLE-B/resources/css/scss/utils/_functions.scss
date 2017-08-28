@@ -1,0 +1,61 @@
+@charset "utf-8";
+/// Base path for assets (fonts, images...),
+/// should not include trailing slash
+/// @access public
+/// @type String
+//$asset-base-path: '/epr' !default;
+$asset-base-path: '..' !default;
+//$asset-base-path: '' !default;
+
+/// Asset URL builder
+/// @access private
+/// @param {String} $type - Asset type, matching folder name
+/// @param {String} $file - Asset file name, including extension
+/// @return {URL} - A `url()` function leading to the asset
+@function asset($type, $file) {
+  @return url($asset-base-path + '/' + $type + '/' + $file);
+}
+
+/// Image asset helper
+/// @access public
+/// @param {String} $file - Asset file name, including extension
+/// @return {URL} - A `url()` function leading to the image
+/// @require {function} asset
+/// example background: image('url');
+@function image($file) {
+  @return asset('images', $file);
+}
+
+/// Font asset helper
+/// @access public
+/// @param {String} $file - Asset file name, including extension
+/// @return {URL} - A `url()` function leading to the font
+/// @require {function} asset
+/// example @include font-size(1.4);
+@function font($file) {
+  @return asset('css/fonts', $file);
+}
+
+// #{$a-tags} {
+//   color: red;
+//   text-decoration: none;
+// }
+// #{$a-tags-hover} {
+//   color: blue;
+// }
+// .module {
+//   #{$a-tags} {
+//     color: blue;
+//     text-decoration: none;
+//   } 
+// }
+
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1em;
+}
